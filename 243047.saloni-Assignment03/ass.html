@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ete practical</title>
+</head>
+<body>
+
+<h2>Live Feedback Analyzer</h2>
+
+<textarea id="textInput" rows="6" cols="50" placeholder="Type your text here..."></textarea><br><br>
+
+<button onclick="analyzeText()">Submit</button>
+
+<p><b>Word Count:</b> <span id="wordCount">0</span></p>
+<p><b>Character Count:</b> <span id="charCount">0</span></p>
+<p><b>Sentiment:</b> <span id="sentiment">Neutral</span></p>
+
+<script>
+function analyzeText() {
+  let text = document.getElementById("textInput").value;
+
+
+  let charCount = text.length;
+
+  let words = text.trim().split(/\s+/);
+  let wordCount = text.trim() === "" ? 0 : words.length;
+
+  let positiveWords = ["good", "happy", "great", "excellent", "awesome", "love"];
+  let negativeWords = ["bad", "sad", "poor", "terrible", "hate", "worst"];
+
+  let score = 0;
+
+  words.forEach(word => {
+    let w = word.toLowerCase();
+    if (positiveWords.includes(w)) score++;
+    if (negativeWords.includes(w)) score--;
+  });
+
+  let sentiment = "Neutral";
+  if (score > 0) sentiment = "Positive";
+  else if (score < 0) sentiment = "Negative";
+
+  document.getElementById("wordCount").innerText = wordCount;
+  document.getElementById("charCount").innerText = charCount;
+  document.getElementById("sentiment").innerText = sentiment;
+}
+</script>
+
+</body>
+</html>

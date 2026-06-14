@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validation Form</title>
+</head>
+<body>
+
+<h2>Form Validation</h2>
+
+<form onsubmit="return validateForm()">
+
+  Name: <input type="text" id="name"><br><br>
+  
+  Message: <textarea id="message" rows="4" cols="30"></textarea><br><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let message = document.getElementById("message").value.trim();
+  let error = "";
+
+  // Name validation
+  if (name === "") {
+    error = "Name cannot be empty";
+  } 
+  else if (!/^[A-Za-z ]+$/.test(name)) {
+    error = "Name must contain only letters";
+  }
+
+  // Character (message) validation
+  else if (message.length < 10) {
+    error = "Message must be at least 10 characters";
+  } 
+  else if (message.length > 100) {
+    error = "Message cannot exceed 100 characters";
+  }
+
+  // Show error or submit
+  if (error !== "") {
+    document.getElementById("error").innerText = error;
+    return false; // stop form submission
+  }
+
+  return true; // allow submission
+}
+</script>
+
+</body>
+</html>

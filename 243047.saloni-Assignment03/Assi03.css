@@ -1,0 +1,30 @@
+.inpdiv{
+    background-color: rgb(233, 178, 111);
+    width: 300px;
+    height: 150px;
+    margin-left: 400px;
+    padding: 10px;
+    text-align: center;
+    
+}
+#btnclick{
+    width: 45px;
+    height: 28px;
+    background-color: #3bc049;;
+    text-align: center;
+}
+#btnclick:hover{
+    background:#4fee5f;
+}
+#index{
+    background:#b7dde8;
+}
+
+.outdiv{
+    width:550px;
+    margin:30px auto;
+  
+}
+
+
+
