@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Saloni243047-Assignment02</title>
+    <script src="Assi02.js" defer></script>
+    <link rel="stylesheet" href="Assi02.css">
+</head>
+
+<body>
+    <div class="head">
+        <h1>Library system</h1>
+    </div>
+    <div class="parent">
+        <div class="inputdiv">
+            <form>
+                <table>
+                    <tr>
+                        <th><label>Firstname:</label></th>
+                        <td>
+                            <input class="input" id="fname" min="3" max="10" type="text" placeholder="abc..."><br>
+                            <span id="fnameError"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th><label>Lastname:</label></th>
+                        <td>
+                            <input class="input" id="lname" min="3" max="10" type="text" placeholder="xyz..."><br>
+                            <span id="lnameError"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>
+                            <input class="input" id="email" type="text" placeholder="abc@gmail.com"><br>
+                            <span id="emailError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number:</th>
+                        <td>
+                            <input class="input" id="phone" type="number" placeholder="+91-00000-00000"><br>
+                            <span id="phoneError"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td>
+                            <textarea class="input" id="address" rows="5" cols="30" placeholder="Bilashpur(HP)"></textarea><br>
+                            <span id="addressError"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>Course:</th>
+                        <td>
+                            <select class="option" id="course">
+                                <!-- <option value="" selected disabled hidden>select course</option> -->
+                                <option value="12th">12th</option>
+                                <option value="BCA">BCA</option>
+                            </select><br>
+                            <span id="courseError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Subject:</th>
+                        <td>
+                            <input type="checkbox" id="Subject1" name="subject" value="Hindi">
+                            <label for="Subject1">Hindi</label>
+                            <input type="checkbox" id="Subject2" name="subject" value="English">
+                            <label for="Subject2">English</label>
+                            <input type="checkbox" id="Subject3" name="subject" value="SST">
+                            <label for="Subject3">SST</label>
+                            <input type="checkbox" id="Subject4" name="subject" value="Science">
+                            <label for="Subject4">Science</label>
+                            <input type="checkbox" id="Subject5" name="subject" value="Maths">
+                            <label for="Subject5">Maths</label><br>
+                            <span id="subjectError"></span>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <th>Time Period:</th>
+                        <td>
+
+                            <select class="option" id="time">
+                                <option value="1day">1day</option>
+                                <option value="2day">2day</option>
+                                <option value="3day">3day</option>
+                                <option value="a week">A week</option>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="date"> Date:</label></th>
+                        <td>
+                            <input type="date" id="date">
+                            <span id="dateError"></span>
+                        </td>
+                    </tr>
+                </table>
+                <button type="button" onclick="validate()"> Submit</button>
+            </form>
+        </div>
+        <div class="outputdiv">
+            <table class="tabout">
+                <tr><th id="heading">Submitted Information</th></tr><br>
+                <tr>
+                    <th><label>Firstname: </span></label></th>
+                    <td><span id="fname1"></span></td>
+
+                </tr>
+                <tr>
+                    <th>
+                        lastname:<span id="lname1"></span>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th id="email">Email:<span id="email1"></span></th>
+                </tr>
+                <tr>
+                    <th id="phone">Phone:<span id="phone1"></span></th>
+                </tr>
+                <tr>
+                    <th>Address:<span id="address1"></span></th>
+                </tr>
+                <tr>
+                    <th>Course:<span id="course1"></span></th>
+                </tr>
+                <tr>
+                    <th>Selected Subjects:<span id="selected"></span></th>
+                </tr>
+                <tr>
+                    <th>Submission Date:<span id="subdate"></span></th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
