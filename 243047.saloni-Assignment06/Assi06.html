@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Browser Utility Webpage</h1>
+    <h3>Window Management</h3>
+    <button id="open">open window</button>
+    <button id="resize">Resize window</button>
+    <button id="close">close window</button>
+
+    <h3>Navigator Information</h3>
+    <button id="showInfo">Show browser Info</button>
+    <p id="infouser"></p>
+    <p id="platform"></p>
+    <p id="online"></p>
+
+    <h3>History Navigation</h3>
+    <button onclick="back()">Go Back</button>
+    <button onclick="forward()">Go forward</button>
+
+    <h3>Show location</h3>
+    <p id="ip"></p>
+    <button onclick="location11()">Show location</button>
+    <button onclick="redirect()">Redirect to Google</button>
+
+    <h3>Current Time</h3>
+    <p>Current Time:<span id="time"></span></p>
+
+
+
+</body>
+<script>
+//     let open1=document.getElementById("open")
+//     let openWindow
+//    open1.addEventListener("click",()=> openWindow=window.open("","","width=300,height=350"))
+
+//      let resize1=document.getElementById("resize")
+    
+//      resize1.addEventListener("click",()=>openWindow.resizeTo(450,490))
+
+let open1 = document.getElementById("open")
+let resize1 = document.getElementById("resize")
+
+let openWindow
+
+open1.addEventListener("click", () => {
+    openWindow = window.open("", "", "width=300,height=350")
+    openWindow.document.write("New Blank Page")
+})
+
+resize1.addEventListener("click", () => {
+    if(openWindow && !openWindow.closed){
+        openWindow.resizeTo(450,490)
+        openWindow.focus()
+    }
+})
+
+     let close1=document.getElementById("close")
+     close1.addEventListener("click",()=>openWindow.close())
+
+     //navigator
+     let showInfo=document.getElementById("showInfo")
+     showInfo.addEventListener("click",()=>{
+        let user=document.getElementById("infouser")
+        user.textContent="user Agent:"+navigator.userAgent;
+
+        let platform=document.getElementById("platform")
+        platform.textContent="platform:"+navigator.platform;
+
+        let online=document.getElementById("online")
+        // console.log(navigator.online);
+       if(navigator.onLine){
+        online.textContent="online:"+"yes";
+       }
+       else{
+        online.textContent="online:"+"no";
+       }
+     }
+    )
+
+    function back(){
+        window.history.back();
+    }
+
+    function forward(){
+        window.history.forward();
+    }
+
+    function redirect(){
+        window.location.href="https://www.google.com/"
+    }
+    function location11(){
+
+        let ip=document.getElementById("ip")
+        // ip.textContent=window.location.href;
+        // ip.textContent=window.location.hostname;
+        ip.textContent=window.location.pathname;
+    // console.log(window.location.href)
+    // console.log(window.location.hostname)
+    console.log(window.location.pathname)
+    }
+
+    // time
+    function showTime() {
+    let now = new Date();
+    let time = now.toLocaleTimeString();
+    document.getElementById("time").innerHTML = time;
+}
+
+setInterval(showTime, 1000);
+</script>
+</html>
